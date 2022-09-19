@@ -19,7 +19,19 @@ import CoreData
  
  */
 
-class DataController {
+class DataController: ObservableObject {
+    
+                    // ajuda a gerenciar os objetos que serão salvos no Core Data
+    let container = NSPersistentContainer(name: "FoodModel")
+    
+    /*Quando inicializa-se o container(NSPersistentContainer), é necessa´rio carregar os objetos do Core Data para poderem ser manipulados*/
+    init() {
+        container.loadPersistentStores {description, error in
+            if let error = error {
+                print("Erro ao carregar os dados \(error)")
+            }
+        }
+    }
     
     func save(context: NSManagedObjectContext) {
         
@@ -28,7 +40,7 @@ class DataController {
         }
         catch {
             let error = error as NSError
-            print("Erro ao salvar os dados do contexto \(error)")
+            print("Erro ao salvar os dados no contexto \(error)")
         }
     }
     
@@ -46,13 +58,20 @@ class DataController {
         food.date = Date()
         
         save(context: context)
-        
-   
     }
     
-    func editFood() {
+    func editFood(foodOld: Food, name: String, calories: Double, context: NSManagedObjectContext) {
         
+        foodOld.name = name
+        foodOld.calories = calories
+        foodOld.date = Date()
+        
+        save(context: context)
     }
 }
+
+
+
+
 
 

@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7316B76D28D8A56500506CEC /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316B76C28D8A56500506CEC /* EditFoodView.swift */; };
 		73BE3AEB28D3B76F00A53BE1 /* CaloriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE3AEA28D3B76F00A53BE1 /* CaloriesApp.swift */; };
 		73BE3AED28D3B76F00A53BE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE3AEC28D3B76F00A53BE1 /* ContentView.swift */; };
 		73BE3AEF28D3B77300A53BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BE3AEE28D3B77300A53BE1 /* Assets.xcassets */; };
 		73BE3AF228D3B77300A53BE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BE3AF128D3B77300A53BE1 /* Preview Assets.xcassets */; };
 		73BE3AFF28D3BD3400A53BE1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE3AFE28D3BD3400A53BE1 /* DataController.swift */; };
 		73BE3B0B28D3C7AE00A53BE1 /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73BE3B0928D3C7AE00A53BE1 /* FoodModel.xcdatamodeld */; };
+		73DC107428D50494002EAB3F /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC107328D50494002EAB3F /* AddFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7316B76C28D8A56500506CEC /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		73BE3AE728D3B76F00A53BE1 /* Calories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BE3AEA28D3B76F00A53BE1 /* CaloriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesApp.swift; sourceTree = "<group>"; };
 		73BE3AEC28D3B76F00A53BE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		73BE3AF128D3B77300A53BE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73BE3AFE28D3BD3400A53BE1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		73BE3B0A28D3C7AE00A53BE1 /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
+		73DC107328D50494002EAB3F /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				73BE3AEC28D3B76F00A53BE1 /* ContentView.swift */,
 				73BE3AEE28D3B77300A53BE1 /* Assets.xcassets */,
 				73BE3AF028D3B77300A53BE1 /* Preview Content */,
+				73DC107328D50494002EAB3F /* AddFoodView.swift */,
+				7316B76C28D8A56500506CEC /* EditFoodView.swift */,
 			);
 			path = Calories;
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73DC107428D50494002EAB3F /* AddFoodView.swift in Sources */,
 				73BE3AED28D3B76F00A53BE1 /* ContentView.swift in Sources */,
+				7316B76D28D8A56500506CEC /* EditFoodView.swift in Sources */,
 				73BE3AFF28D3BD3400A53BE1 /* DataController.swift in Sources */,
 				73BE3AEB28D3B76F00A53BE1 /* CaloriesApp.swift in Sources */,
 				73BE3B0B28D3C7AE00A53BE1 /* FoodModel.xcdatamodeld in Sources */,
