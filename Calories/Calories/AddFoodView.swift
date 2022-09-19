@@ -9,19 +9,41 @@ import SwiftUI
 
 struct AddFoodView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentation
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @State var name : String = ""
     @State var calories : Double = 0.0
     
     var body: some View {
         
-        Form{
+        AddEditFoodView(name: $name, calories: $calories, buttonCancel: {  presentation.wrappedValue.dismiss()}) {
+            if !name.isEmpty{
+                DataController().addFood(name: name, calories: calories, context: managedObjectContext )
+                presentation.wrappedValue.dismiss()
+            }
+        }
+    }
+}
+
+
+struct AddEditFoodView: View {
+
+
+
+    @Binding var name: String
+    @Binding var calories: Double
+    @State var buttonCancel: () -> Void
+    @State var buttonAction: () -> Void
+    
+    var body: some View {
+
+        
+        Form {
             Section{
                 TextField("Insert food name", text: $name )
                     .textFieldStyle(.roundedBorder)
-                                .padding()
+                    .padding()
                 
                 VStack{
                     Text("Calories: \(Int(calories))")
@@ -30,15 +52,12 @@ struct AddFoodView: View {
                 
                 HStack{
                     Button("Submit"){
-                        if !name.isEmpty{
-                            DataController().addFood(name: name, calories: calories, context: managedObjectContext )
-                            presentation.wrappedValue.dismiss()
-                        }
-                    }
+                        buttonAction()
+                    }.buttonStyle(BorderlessButtonStyle())
                     Spacer()
                     Button("Cancel"){
-                            presentation.wrappedValue.dismiss()
-                    }
+                      buttonCancel()
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
         }
@@ -48,11 +67,10 @@ struct AddFoodView: View {
 
 
 
-//
 //struct AddFoodView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        AddFoodView()
 //    }
 //}
-//
-//
+
+

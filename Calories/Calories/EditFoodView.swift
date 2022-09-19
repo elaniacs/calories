@@ -18,25 +18,10 @@ struct EditFoodView: View {
 
     
     var body: some View {
-        Form{
-            Section{
-                TextField(food.name ?? "", text: $name )
-                    .textFieldStyle(.roundedBorder)
-                                .padding()
-                
-                VStack{
-                    Text("Calories: \(Int(calories))")
-                    Slider(value: $calories, in: 1...3000, step: 10 )
-                }.padding()
-                
-                HStack{
-                    Button("Submit"){
-                        if !name.isEmpty{
-                            DataController().editFood(foodOld: food, name: name, calories: calories, context: managedObjectContext)
-                            presentation.wrappedValue.dismiss()
-                        }
-                    }
-                }
+        AddEditFoodView(name: $name, calories: $calories, buttonCancel: {  presentation.wrappedValue.dismiss()}) {
+            if !name.isEmpty{
+                DataController().editFood(foodOld: food, name: name, calories: calories, context: managedObjectContext)
+                presentation.wrappedValue.dismiss()
             }
         }
     }
